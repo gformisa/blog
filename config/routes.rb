@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
+  root "articles#index" # Define the root route to the articles index page. Basically it was defined in the articles controller index action.
+
   get "/articles", to: "articles#index" # Define the route for the articles index page.
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
