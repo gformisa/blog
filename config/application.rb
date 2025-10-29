@@ -1,4 +1,4 @@
-require_relative "boot"
+require_relative "boot" # Require the boot file to load the Rails application.
 
 require "rails/all"
 
