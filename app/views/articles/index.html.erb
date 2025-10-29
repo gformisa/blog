@@ -5,8 +5,7 @@
 <ul>
   <% @articles.each do |article| %>
     <li>
-      <%= article.title %>
-      <%= article.body %>
+      <%= link_to article.title %>
     </li>
   <% end %>
 </ul>
