@@ -1,2 +1,13 @@
-<h1>HELLO RAILS</h1>
-<p>Find me in app/views/articles/index.html.erb and articles controller and helper.</p>
+<!-- <h1>HELLO RAILS</h1> -->
+<!-- <p>Find me in app/views/articles/index.html.erb and articles controller and helper.</p> -->
+<h1>Articles</h1>
+
+<ul>
+  <% @articles.each do |article| %>
+    <li>
+      <%= article.title %>
+      <%= article.body %>
+    </li>
+  <% end %>
+</ul>
+
