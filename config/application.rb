@@ -1,6 +1,6 @@
 require_relative "boot" # Require the boot file to load the Rails application.
 
-require "rails/all"
+require "rails/all" # Require all Rails components.
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
