@@ -20,6 +20,19 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def edit # This action is used to edit an existing article.
+    @article = Article.find(params[:id]) # This line fetches the article from the database and assigns it to the @article instance variable.
+  end
+
+  def update # This action is used to update an existing article.
+    @article = Article.find(params[:id]) # This line fetches the article from the database and assigns it to the @article instance variable.
+    if @article.update(article_params) # This line updates the article in the database.
+      redirect_to article_path(@article) # This line redirects to the show page for the updated article.
+    else
+      render :edit, status: :unprocessable_entity # This line renders the edit template.
+    end
+  end
+
   private
   def article_params
     params.require(:article).permit(:title, :body) # This line allows the title and body parameters to be passed to the create action.
