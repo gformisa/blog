@@ -33,6 +33,13 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def destroy # This action is used to destroy an existing article.
+    @article = Article.find(params[:id]) # This line fetches the article from the database and assigns it to the @article instance variable.
+    @article.destroy # This line destroys the article in the database.
+    redirect_to articles_path, status: :see_other # This line redirects to the index page for the articles.
+    flash[:notice] = "Article was successfully destroyed." # This line sets a flash notice message.
+  end
+
   private
   def article_params
     params.require(:article).permit(:title, :body) # This line allows the title and body parameters to be passed to the create action.
